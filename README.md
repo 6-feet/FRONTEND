@@ -2,4 +2,4 @@
 The project helps to find a best friend (dog). 
 
 
-## Layout in [Figma](https://www.figma.com/file/Hy07HqUhSXgt8dOvGHf6FT/6feet)
+<a target="_blank" href="https://www.figma.com/file/Hy07HqUhSXgt8dOvGHf6FT/6feet">Layout in Figma</a>
