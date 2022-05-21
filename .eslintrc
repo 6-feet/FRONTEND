@@ -18,6 +18,7 @@
   },
   "extends": [
     "next",
+    "airbnb-base",
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@next/next/recommended",
