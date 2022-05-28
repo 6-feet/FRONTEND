@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint src/**/*.{ts,tsx}",
-    "test": ""
+    "test": "",
+    "sb": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "prettier": {
     "singleQuote": true,
@@ -32,12 +34,22 @@
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@storybook/addon-actions": "^6.5.6-alpha.0",
+    "@storybook/addon-essentials": "^6.5.6-alpha.0",
+    "@storybook/addon-interactions": "^6.5.6-alpha.0",
+    "@storybook/addon-links": "^6.5.6-alpha.0",
+    "@storybook/builder-webpack5": "^6.5.6-alpha.0",
+    "@storybook/manager-webpack5": "^6.5.6-alpha.0",
+    "@storybook/react": "^6.5.6-alpha.0",
+    "@storybook/testing-library": "^0.0.11",
     "@svgr/webpack": "^6.2.1",
     "@types/node": "^17.0.34",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
+    "babel-loader": "^8.2.5",
     "eslint": "^8.16.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "^12.1.6",
