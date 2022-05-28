@@ -4,8 +4,34 @@
   "plugins": [
     "@typescript-eslint"
   ],
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.stories.tsx"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ],
   "rules": {
     "semi": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.*",
+          "**/.storybook/**/*.*"
+        ],
+        "peerDependencies": true
+      }
+    ],
+    "import/extensions": ["error", "ignorePackages", {
+      "ts": "never",
+      "tsx": "never",
+      "js": "never",
+      "jsx": "never"
+    }],
     "@typescript-eslint/semi": [
       "error"
     ],
