@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button, { IButton } from './Button';
+import './Button.module.scss';
 
 export default {
   title: 'UI/Button',
