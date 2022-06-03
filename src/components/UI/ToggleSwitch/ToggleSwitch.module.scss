@@ -9,6 +9,16 @@
     & + .label {
       background-color: $color-secondary;
     }
+    & + .label .button {
+      left: calc(100% - 5px);
+      transform: translate(-100%, -50%);
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+    & + .label {
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -23,26 +33,21 @@
   border-radius: 100px;
   position: relative;
   transition: background-color .3s;
-  .button {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 5px;
-    width: 14px;
-    height: 14px;
-    border-radius: 45px;
-    transition: 0.3s;
-    background: $color-white;
-    box-shadow: $shadow-primary;
+  &:active .button {
+    width: 20px;
   }
 }
 
-.checkbox:checked + .label .button {
-  left: calc(100% - 5px);
-  transform: translate(-100%, -50%);
-}
-
-.label:active .button {
-  width: 20px;
+.button {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 45px;
+  transition: 0.3s;
+  background: $color-white;
+  box-shadow: $shadow-primary;
 }
