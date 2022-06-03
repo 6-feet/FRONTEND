@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import '../styles/global-styles.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
   <>

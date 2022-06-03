@@ -16,6 +16,10 @@
   ],
   "rules": {
     "semi": "off",
+    "class-methods-use-this": [
+      "off",
+      { "enforceForClassFields": false }
+    ],
     "import/no-extraneous-dependencies": [
       "error",
       {

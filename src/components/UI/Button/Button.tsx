@@ -1,16 +1,21 @@
 import React, { FC } from 'react';
-import style from './Button.module.scss';
+import styles from './Button.module.scss';
 
 export interface IButton {
   children: string;
   type?: 'button' | 'submit';
-  color?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary' | 'default';
+  size?: 'small' | 'default';
 }
 
-const Button: FC<IButton> = ({ children, type = 'button', color = 'primary' }) => (
-  <button type={type} className={style.bg} color={color}>
-    {children}
-  </button>
-);
+const Button: FC<IButton> = ({ children, type = 'button', color = 'default', size = 'default' }) => {
+  const classes = [styles.button, styles[size], styles[color]];
+
+  return (
+    <button type={type} className={classes.join('')}>
+      {children}
+    </button>
+  );
+};
 
 export default Button;
