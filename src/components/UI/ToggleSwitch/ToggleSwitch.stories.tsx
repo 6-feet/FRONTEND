@@ -3,15 +3,15 @@ import ToggleSwitch, { IToggleSwitch } from './ToggleSwitch';
 import './ToggleSwitch.module.scss';
 
 export default {
-    title: 'UI/ToggleSwitch',
-    component: ToggleSwitch,
+  title: 'UI/ToggleSwitch',
+  component: ToggleSwitch,
 } as ComponentMeta<typeof ToggleSwitch>;
 
-const Template = (args: IToggleSwitch) => <ToggleSwitch {...args}/>;
+const Template = (args: IToggleSwitch) => <ToggleSwitch {...args} />;
 
 export const Default: ComponentStory<typeof ToggleSwitch> = Template.bind({});
 
 Default.args = {
-    active: false,
-    id: 'switch'
+  active: false,
+  id: 'switch',
 };
