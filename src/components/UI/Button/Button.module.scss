@@ -17,25 +17,28 @@
 .button {
   border-radius: 99px;
   border: none;
+  &:active {
+    box-shadow: $shadow-default;
+    color: $color-gray-low;
+  }
+  &:disabled {
+    background: $color-gray-high;
+    cursor: not-allowed;
+  }
 }
 
 .primary {
-  @include colorsWithAnimation($color-primary-gradient);
+  @include colorsWithAnimation($color-primary-gradient-3);
 }
 
 .secondary {
-  @include colorsWithAnimation($color-secondary-gradient);
+  @include colorsWithAnimation($color-secondary-gradient-3);
 }
 
 .rounded {
   width: 60px;
   height: 60px;
   border-radius: 100%;
-}
-
-.disabled {
-  background: $color-grayMedium;
-  cursor: not-allowed;
 }
 
 .default-variant {
