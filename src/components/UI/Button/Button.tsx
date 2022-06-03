@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 import styles from './Button.module.scss';
+import { Sizes, Types, Variants } from './Button.types';
 
-export interface IButton {
-  children: string;
-  type?: 'button' | 'submit';
-  variant?: 'primary' | 'secondary' | 'default-variant';
-  size?: 'small' | 'default' | 'rounded';
-  disabled?: boolean;
+interface IButton {
+    children: string;
+    type?: Types;
+    variant?: Variants;
+    size?: Sizes;
+    disabled?: boolean;
 }
 
-const Button: FC<IButton> = ({ children, type = 'button', variant = 'primary', size = 'default', disabled = false }) => {
+const Button: FC<IButton> = ({ children, type = Types.button, variant = Variants.primary, size = Sizes.default, disabled = false }) => {
   const classes = [
       styles.button,
       styles[variant],
