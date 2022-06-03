@@ -27,6 +27,12 @@
   @include colorsWithAnimation($color-secondary-gradient);
 }
 
+.rounded {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+
 .disabled {
   background: $color-grayMedium;
   cursor: not-allowed;

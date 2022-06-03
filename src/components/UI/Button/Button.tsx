@@ -5,15 +5,15 @@ export interface IButton {
   children: string;
   type?: 'button' | 'submit';
   variant?: 'primary' | 'secondary' | 'default-variant';
-  size?: 'small' | 'default';
+  size?: 'small' | 'default' | 'rounded';
   disabled?: boolean;
 }
 
 const Button: FC<IButton> = ({ children, type = 'button', variant = 'primary', size = 'default', disabled = false }) => {
   const classes = [
       styles.button,
-      styles[size],
-      styles[variant]
+      styles[variant],
+      styles[size]
   ];
 
   if (disabled) {
