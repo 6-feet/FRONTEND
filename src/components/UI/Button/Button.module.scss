@@ -1,21 +1,41 @@
 @import "src/styles/colors";
 @import "src/styles/shadow";
 
+@mixin colorsWithAnimation($color) {
+  background-image: $color;
+  box-shadow: $shadow-primary;
+  color: $color-white;
+  flex: 1 1 auto;
+  transition: 0.5s;
+  background-size: 200% auto;
+  cursor: pointer;
+  &:hover {
+    background-position: right center;
+  }
+}
+
 .button {
   border-radius: 99px;
   border: none;
 }
 
 .primary {
-  background-image: $color-primary;
-  box-shadow: $shadow-primary;
-  color: $color-white;
-  flex: 1 1 auto;
-  transition: 0.5s;
-  background-size: 200% auto;
-  &:hover {
-    background-position: right center;
-  }
+  @include colorsWithAnimation($color-primary-gradient);
+}
+
+.secondary {
+  @include colorsWithAnimation($color-secondary-gradient);
+}
+
+.disabled {
+  background: $color-grayMedium;
+  cursor: not-allowed;
+}
+
+.default-variant {
+  background: $color-white;
+  border-radius: 50px;
+  color: $color-primary;
 }
 
 .small {

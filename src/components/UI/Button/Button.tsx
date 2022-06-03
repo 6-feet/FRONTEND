@@ -4,15 +4,24 @@ import styles from './Button.module.scss';
 export interface IButton {
   children: string;
   type?: 'button' | 'submit';
-  color?: 'primary' | 'secondary' | 'default';
+  variant?: 'primary' | 'secondary' | 'default-variant';
   size?: 'small' | 'default';
+  disabled?: boolean;
 }
 
-const Button: FC<IButton> = ({ children, type = 'button', color = 'default', size = 'default' }) => {
-  const classes = [styles.button, styles[size], styles[color]];
+const Button: FC<IButton> = ({ children, type = 'button', variant = 'primary', size = 'default', disabled = false }) => {
+  const classes = [
+      styles.button,
+      styles[size],
+      styles[variant]
+  ];
+
+  if (disabled) {
+      classes.push(styles.disabled);
+  }
 
   return (
-    <button type={type} className={classes.join('')}>
+    <button type={type} disabled={disabled} className={classes.join(' ')}>
       {children}
     </button>
   );

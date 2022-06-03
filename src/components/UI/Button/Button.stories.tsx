@@ -12,5 +12,5 @@ const Template = (args: IButton) => <Button {...args}>{args.children}</Button>;
 export const Default: ComponentStory<typeof Button> = Template.bind({});
 
 Default.args = {
-  children: 'Press me',
+  children: 'Press me'
 };
