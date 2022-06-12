@@ -4,14 +4,14 @@ import React, {
 import styles from './ToggleSwitch.module.scss';
 
 export interface IToggleSwitch {
-  active?: boolean;
-  callback: (isActive: boolean) => boolean | void;
+  onToggle: (isActive: boolean) => boolean | void;
   id: string;
+  active?: boolean;
   disabled?: boolean;
 }
 
 const ToggleSwitch: FC<IToggleSwitch> = ({
-  active = true, callback, id, disabled = false,
+  active = true, onToggle, id, disabled = false,
 }) => {
   const [isActive, setIsActive] = useState(active);
 
@@ -21,10 +21,10 @@ const ToggleSwitch: FC<IToggleSwitch> = ({
     }
   }, [disabled]);
 
-  const handleToggle = (event: ChangeEvent<HTMLInputElement>) => {
+  const toggle = (event: ChangeEvent<HTMLInputElement>) => {
     const { checked } = event.target;
     setIsActive(checked);
-    return callback(checked);
+    return onToggle(checked);
   };
 
   return (
@@ -32,7 +32,7 @@ const ToggleSwitch: FC<IToggleSwitch> = ({
       <input
         className={styles.checkbox}
         checked={isActive}
-        onChange={handleToggle}
+        onChange={toggle}
         id={id}
         type="checkbox"
         disabled={disabled}

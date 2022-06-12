@@ -1,0 +1,58 @@
+@import "src/styles/margins";
+@import "src/styles/colors";
+@import "src/styles/shadow";
+
+@mixin hover-input {
+  background: $color-white;
+  box-shadow: $shadow-block;
+}
+
+.input-wrapper {
+  margin-bottom: $margin-between-blocks;
+}
+
+.label {
+  position: relative;
+  display: inline-block;
+  margin-bottom: $margin-between-elements;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: $margin-between-elements;
+  transform: translateY(-50%);
+}
+
+.input {
+  background: $color-white-faint;
+  border: 1px solid $color-white-faint;
+  border-radius: 14px;
+  color: $color-black;
+  height: 48px;
+  width: 315px;
+  padding: 10px 43px;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  &:not(:disabled):hover{
+    @include hover-input;
+  }
+  &:focus {
+    outline: 0;
+    @include hover-input;
+  }
+  &:disabled {
+    background-color: $color-gray-low;
+    cursor: not-allowed;
+  }
+  &::placeholder {
+    color: $color-gray-low;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

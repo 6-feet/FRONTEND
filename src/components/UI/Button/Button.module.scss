@@ -1,5 +1,6 @@
 @import "src/styles/colors";
 @import "src/styles/shadow";
+@import "src/styles/margins";
 
 @mixin colorsWithAnimation($color) {
   background-image: $color;
@@ -17,13 +18,15 @@
 .button {
   border-radius: 99px;
   border: none;
-  &:active {
+  margin-bottom: $margin-between-blocks;
+  &:not(:disabled):active {
     box-shadow: $shadow-default;
-    color: $color-gray-low;
+    color: $color-black;
   }
   &:disabled {
-    background: $color-gray-high;
+    background: $color-gray-low;
     cursor: not-allowed;
+    box-shadow: none;
   }
 }
 
