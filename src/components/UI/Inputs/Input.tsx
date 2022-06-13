@@ -11,6 +11,7 @@ export interface IInput {
   onChange: (inputValue: string) => void;
   IconComponent: FC<IIcon>;
   placeholder?: string;
+  classes?: string;
   value?: string;
   name?: string;
   disabled?: boolean;
@@ -32,6 +33,7 @@ const Input: FC<IInput> = ({
   required = false,
   id,
   name = id,
+  classes,
 }) => {
   const [inputValue, setInputValue] = useState(value);
 
@@ -40,6 +42,8 @@ const Input: FC<IInput> = ({
     setInputValue(newInputValue);
     onChange(newInputValue);
   };
+
+  const inputClasses = [styles.input, classes];
 
   return (
     <div className={styles.inputWrapper}>
@@ -54,7 +58,7 @@ const Input: FC<IInput> = ({
              required={required}
              onChange={change}
              name={name}
-             className={styles.input}
+             className={inputClasses.join(' ')}
       />
         {children}
       </Label>

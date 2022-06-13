@@ -9,6 +9,7 @@ export interface IButton {
   variant?: Variants;
   size?: Sizes;
   disabled?: boolean;
+  classes?: string;
 }
 
 const Button: FC<IButton> = ({
@@ -18,11 +19,12 @@ const Button: FC<IButton> = ({
   size = Sizes.default,
   disabled = false,
   onClick,
+  classes,
 }) => {
-  const classes = [styles.button, styles[variant], styles[size]];
+  const buttonClasses = [styles.button, styles[variant], styles[size], classes];
 
   return (
-    <button type={type} disabled={disabled} className={classes.join(' ')} onClick={onClick}>
+    <button type={type} disabled={disabled} className={buttonClasses.join(' ')} onClick={onClick}>
       {children}
     </button>
   );
