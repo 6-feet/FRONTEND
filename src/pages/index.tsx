@@ -3,6 +3,7 @@ import ToggleSwitch from '../components/UI/ToggleSwitch/ToggleSwitch';
 import Input from '../components/UI/Inputs/Input';
 import Folder from '../components/UI/Icons/Folder';
 import InputPassword from '../components/UI/Inputs/InputPaswword/InputPassword';
+import InputWithButton from '../components/UI/Inputs/InputWithButton/InputWithButton';
 import { Autocomplete } from '../components/UI/Inputs/Input.types';
 
 const Home = (): JSX.Element => {
@@ -25,6 +26,7 @@ const Home = (): JSX.Element => {
       <ToggleSwitch id="switch" onToggle={changeValue} />
       <Input id="input" required={false} value="Name" placeholder="enter your name" onChange={changeInput} IconComponent={Folder}/>
       <InputPassword id='inputPassword' onChange={changeInput} show={true} autocomplete={Autocomplete.off}/>
+      <InputWithButton buttonText='check' id='withButton' IconComponent={Folder} onChange={changeInput} onClickButton={click} />
     </div>
   );
 };
