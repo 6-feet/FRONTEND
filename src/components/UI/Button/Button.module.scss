@@ -22,8 +22,8 @@
   font-weight: $font-weight-l;
   margin-bottom: $margin-between-blocks;
   &:not(:disabled):active {
+    background-position: center;
     box-shadow: $shadow-default;
-    color: $color-black;
   }
   &:disabled {
     background: $color-gray-low;
